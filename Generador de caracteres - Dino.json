@@ -1,0 +1,154 @@
+{
+  "source_file": "Generador de caracteres - Dino.pdf",
+  "page_count": 3,
+  "metadata": {
+    "Author": "JUAN PABLO OSPINA LOPEZ",
+    "Creator": "Microsoft® Word para Microsoft 365",
+    "CreationDate": {
+      "raw": "D:20260418114806-05'00'",
+      "iso": "2026-04-18T11:48:06-05:00"
+    },
+    "ModDate": {
+      "raw": "D:20260418114806-05'00'",
+      "iso": "2026-04-18T11:48:06-05:00"
+    },
+    "Producer": "Microsoft® Word para Microsoft 365"
+  },
+  "pages": [
+    {
+      "page_number": 1,
+      "size": {
+        "width": 612.0,
+        "height": 792.0,
+        "unit": "points"
+      },
+      "text": "Modelos de lenguaje a nivel de caracteres con RNN \nParte 1. Generador de caracteres \n¡Bienvenido a la Isla de los Dinosaurios! Los principales investigadores  en ingeniería genética están creando \nnuevas especies de dinosaurios y tenemos la misión de asignarles un nombre. En este momento contamos con \nuna lista que contiene todos los nombres de dinosaurios conocidos. A partir de ese listado, tenemos la misión \nde entrenar un modelo de lenguaje a nivel de caracteres, usando RNN, que aprenda los patrones de los nombres \ny genere nuevas combinaciones para asignar un nombre a las nuevas especies . Se espera que los  nombres \ngenerados sean originales, plausibles y variados.  \n \n• Datos: https://github.com/jpospinalo/MachineLearning/blob/main/nlp/dinos.csv.  \n• Preprocesamiento: en esta etapa deberá: \no Normalizar el texto  \no Agregar tokens de inicio y fin de secuencia \no Definir la longitud máxima de la secuencia representada por 𝑇 \no Aplicar padding (<PAD>) a las secuencias con menor longitud \no Definir secuencias de entrada y secuencia objetivo. Recuerde que deben tener la forma: \n \n𝑋 = [𝑥0, 𝑥1, … , 𝑥𝑇−1],   𝑌 = [𝑥1, 𝑥2, … , 𝑥𝑇] \n \n• Modelo: el modelo debe funcionar como un decoder-only, es decir, una red que intenta predecir el \nsiguiente carácter de la secuencia de manera autorregresiva. Para su implementación, es posible emplear \nceldas recurrentes del tipo RNN, LSTM o GRU, según la arquitectura que desee explorar \n \n",
+      "lines": [
+        "Modelos de lenguaje a nivel de caracteres con RNN",
+        "Parte 1. Generador de caracteres",
+        "¡Bienvenido a la Isla de los Dinosaurios! Los principales investigadores  en ingeniería genética están creando",
+        "nuevas especies de dinosaurios y tenemos la misión de asignarles un nombre. En este momento contamos con",
+        "una lista que contiene todos los nombres de dinosaurios conocidos. A partir de ese listado, tenemos la misión",
+        "de entrenar un modelo de lenguaje a nivel de caracteres, usando RNN, que aprenda los patrones de los nombres",
+        "y genere nuevas combinaciones para asignar un nombre a las nuevas especies . Se espera que los  nombres",
+        "generados sean originales, plausibles y variados.",
+        "",
+        "• Datos: https://github.com/jpospinalo/MachineLearning/blob/main/nlp/dinos.csv.",
+        "• Preprocesamiento: en esta etapa deberá:",
+        "o Normalizar el texto",
+        "o Agregar tokens de inicio y fin de secuencia",
+        "o Definir la longitud máxima de la secuencia representada por 𝑇",
+        "o Aplicar padding (<PAD>) a las secuencias con menor longitud",
+        "o Definir secuencias de entrada y secuencia objetivo. Recuerde que deben tener la forma:",
+        "",
+        "𝑋 = [𝑥0, 𝑥1, … , 𝑥𝑇−1],   𝑌 = [𝑥1, 𝑥2, … , 𝑥𝑇]",
+        "",
+        "• Modelo: el modelo debe funcionar como un decoder-only, es decir, una red que intenta predecir el",
+        "siguiente carácter de la secuencia de manera autorregresiva. Para su implementación, es posible emplear",
+        "celdas recurrentes del tipo RNN, LSTM o GRU, según la arquitectura que desee explorar",
+        ""
+      ],
+      "annotations": [
+        {
+          "subtype": "Link",
+          "contents": null,
+          "uri": "https://github.com/jpospinalo/MachineLearning/blob/main/nlp/dinos.csv"
+        }
+      ]
+    },
+    {
+      "page_number": 2,
+      "size": {
+        "width": 612.0,
+        "height": 792.0,
+        "unit": "points"
+      },
+      "text": "• Muestreo: utilice diferentes temperaturas durante el proceso de generación, por ejemplo: (0.7, 1.0, 2.5, 4). \nAdicionalmente, implemente los métodos top-k y top-p para controlar la diversidad en los nombres \ngenerados y observar su efecto sobre la creatividad y coherencia de los nombres. \n• Entregable: presente los 10 mejores nombres generados y una nota breve (3 –5 líneas) con un análisis \ncomparativo sobre los modelos y parámetros de muestreo que ofrecieron mejores resultados en términos \nde top-k, top-p y temperatura. \nParte 2. Generar una descripción de los nombres generados utilizando \nOllama \nEl objetivo de esta sección es crear una breve descripción para los nombres generados en el punto anterior, \nutilizando alguno de los modelos disponibles en Ollama. Para esta configuración se requiere: \n• Crear un notebook de SageMaker con una instancia tipo m5.xlarge. \n• Instalar Ollama a partir de una imagen de Docker. \n• Descargar un modelo tal como gemma, llama, Qwen según su preferencia. \n• Exponer Ollama mediante un túnel HTTP , utilizando la aplicación ngrok para generar un endpoint con el \nmodelo seleccionado \n• Generar una descripción para los 10 nombres generados en el punto anterior. Proporcione un breve \ncontexto al modelo sobre las reglas y patrones comunes en la formación de nombres de dinosaurios \nreales (por ejemplo, el uso de sufijos como -saurus, -raptor, -odon, -long o -venator, y prefijos de origen \ngriego o latino que describen forma, tamaño o lugar). Esto ayudará a que los nombres generados, aunque \nsean nuevos, mantengan coherencia y semejanza con la nomenclatura paleontológica real. \nNOTA: para este punto no se permite utilizar APIs externas. El ejercicio debe realizarse utilizando un LLM \ninstalado de forma local según las instrucciones. De otra forma no será tenido en cuenta. \nNOTA IMPORTANTE:  \nLos notebooks de SageMaker solo conservan los archivos almacenados en la carpeta /SageMaker, la cual se \nencuentra en el directorio home de la instancia. Por este motivo, es necesario: \n• Cambiar el Docker data-root a un directorio dentro de la carpeta /SageMaker. \n• Configurar un lifecycle script (on-start) en bash que actualice esta ruta automáticamente cada vez que se \ninicie el notebook. \n• De esta forma, se  garantiza la persistencia de la instalación de Ollama y de los modelos descargados, \nevitando que se eliminen al apagar la instancia. \nParte 3. Text-to-Image \nEl objetivo de esta sección es crear una imagen para cada uno de los nombres de dinosaurios generados, \nutilizando un modelo liviano de Text -to-Image que pueda ejecutarse en Google Colab o en un entorno con \nrecursos limitados. Para esta sección se requiere: \n• Crear un notebook en Google Colab (o entorno equivalente con GPU T4). \n• Instalar las librerías necesarias: diffusers, transformers, torch, accelerate, y safetensors. \n• Seleccionar e implementar un modelo de difusión liviano, por ejemplo: amused/amused-512 disponible \nen Hugging Face, FLUX, etc ",
+      "lines": [
+        "• Muestreo: utilice diferentes temperaturas durante el proceso de generación, por ejemplo: (0.7, 1.0, 2.5, 4).",
+        "Adicionalmente, implemente los métodos top-k y top-p para controlar la diversidad en los nombres",
+        "generados y observar su efecto sobre la creatividad y coherencia de los nombres.",
+        "• Entregable: presente los 10 mejores nombres generados y una nota breve (3 –5 líneas) con un análisis",
+        "comparativo sobre los modelos y parámetros de muestreo que ofrecieron mejores resultados en términos",
+        "de top-k, top-p y temperatura.",
+        "Parte 2. Generar una descripción de los nombres generados utilizando",
+        "Ollama",
+        "El objetivo de esta sección es crear una breve descripción para los nombres generados en el punto anterior,",
+        "utilizando alguno de los modelos disponibles en Ollama. Para esta configuración se requiere:",
+        "• Crear un notebook de SageMaker con una instancia tipo m5.xlarge.",
+        "• Instalar Ollama a partir de una imagen de Docker.",
+        "• Descargar un modelo tal como gemma, llama, Qwen según su preferencia.",
+        "• Exponer Ollama mediante un túnel HTTP , utilizando la aplicación ngrok para generar un endpoint con el",
+        "modelo seleccionado",
+        "• Generar una descripción para los 10 nombres generados en el punto anterior. Proporcione un breve",
+        "contexto al modelo sobre las reglas y patrones comunes en la formación de nombres de dinosaurios",
+        "reales (por ejemplo, el uso de sufijos como -saurus, -raptor, -odon, -long o -venator, y prefijos de origen",
+        "griego o latino que describen forma, tamaño o lugar). Esto ayudará a que los nombres generados, aunque",
+        "sean nuevos, mantengan coherencia y semejanza con la nomenclatura paleontológica real.",
+        "NOTA: para este punto no se permite utilizar APIs externas. El ejercicio debe realizarse utilizando un LLM",
+        "instalado de forma local según las instrucciones. De otra forma no será tenido en cuenta.",
+        "NOTA IMPORTANTE:",
+        "Los notebooks de SageMaker solo conservan los archivos almacenados en la carpeta /SageMaker, la cual se",
+        "encuentra en el directorio home de la instancia. Por este motivo, es necesario:",
+        "• Cambiar el Docker data-root a un directorio dentro de la carpeta /SageMaker.",
+        "• Configurar un lifecycle script (on-start) en bash que actualice esta ruta automáticamente cada vez que se",
+        "inicie el notebook.",
+        "• De esta forma, se  garantiza la persistencia de la instalación de Ollama y de los modelos descargados,",
+        "evitando que se eliminen al apagar la instancia.",
+        "Parte 3. Text-to-Image",
+        "El objetivo de esta sección es crear una imagen para cada uno de los nombres de dinosaurios generados,",
+        "utilizando un modelo liviano de Text -to-Image que pueda ejecutarse en Google Colab o en un entorno con",
+        "recursos limitados. Para esta sección se requiere:",
+        "• Crear un notebook en Google Colab (o entorno equivalente con GPU T4).",
+        "• Instalar las librerías necesarias: diffusers, transformers, torch, accelerate, y safetensors.",
+        "• Seleccionar e implementar un modelo de difusión liviano, por ejemplo: amused/amused-512 disponible",
+        "en Hugging Face, FLUX, etc"
+      ],
+      "annotations": []
+    },
+    {
+      "page_number": 3,
+      "size": {
+        "width": 612.0,
+        "height": 792.0,
+        "unit": "points"
+      },
+      "text": "• Utilizar como entrada el nombre y algunos detalles de las descripciones generadas en el punto anterior \ncon Ollama \n• Generar una imagen por cada uno de los 10 nombres, empleando un prompt descriptivo que incluya el \nnombre y las características del dinosaurio. \n• Limiten la cantidad de contexto y la resolución de la imagen para disminuir el consumo de recursos. \nParte 4. Integración (Generación+Ollama+Difusión+Web) \nEl objetivo de esta sección es construir un sitio web que integre todos los pasos anteriores. El sitio debe incluir \ntres secciones principales: \n \n• Descripción del modelo: en esta sección presente el informe del entrenamiento del modelo de generación \ndel primer punto. Incluya métricas de evaluación, curvas de aprendizaje, descripción de la arquitectura, etc. \n• Sección de ejemplos:  donde se presenten los nombres, descripciones e imágenes generadas en los tres \npuntos anteriores. Esta información puede mostrarse en una tabla o en el formato visual que el grupo \nprefiera. \n• Sección interactiva: debe existir un botón “Nuevo Dinosaurio” que permita: \no Generar un nuevo nombre, obtener la descripción generada por Ollama y producir la imagen \ncorrespondiente mediante el modelo de difusión. \no Esta funcionalidad debe utilizar los endpoints configurados para Ollama y para el modelo de \ndifusión (ya sea en Colab o en local). \no En ambos casos, los servicios deben exponerse mediante ngrok para permitir la comunicación \ndesde el sitio web. \no Finalmente, todo el proyecto debe estar desplegado en AWS, con excepción del modelo de difusión, \nque puede ejecutarse en Colab o de forma local según se requiera. \nEntregables: \nLa evaluación se realizará a través del sitio web generado, verificando la integración funcional de todos los \ncomponentes tal como se solicita en las instrucciones. \n \nCalificación \n• Sustentación por un miembro del grupo 1.5 pts. \n• Repositorio y arquitectura completa 2.5 pts. \n• Metodología y seguimiento a los experimentos 1.0 pts.  ",
+      "lines": [
+        "• Utilizar como entrada el nombre y algunos detalles de las descripciones generadas en el punto anterior",
+        "con Ollama",
+        "• Generar una imagen por cada uno de los 10 nombres, empleando un prompt descriptivo que incluya el",
+        "nombre y las características del dinosaurio.",
+        "• Limiten la cantidad de contexto y la resolución de la imagen para disminuir el consumo de recursos.",
+        "Parte 4. Integración (Generación+Ollama+Difusión+Web)",
+        "El objetivo de esta sección es construir un sitio web que integre todos los pasos anteriores. El sitio debe incluir",
+        "tres secciones principales:",
+        "",
+        "• Descripción del modelo: en esta sección presente el informe del entrenamiento del modelo de generación",
+        "del primer punto. Incluya métricas de evaluación, curvas de aprendizaje, descripción de la arquitectura, etc.",
+        "• Sección de ejemplos:  donde se presenten los nombres, descripciones e imágenes generadas en los tres",
+        "puntos anteriores. Esta información puede mostrarse en una tabla o en el formato visual que el grupo",
+        "prefiera.",
+        "• Sección interactiva: debe existir un botón “Nuevo Dinosaurio” que permita:",
+        "o Generar un nuevo nombre, obtener la descripción generada por Ollama y producir la imagen",
+        "correspondiente mediante el modelo de difusión.",
+        "o Esta funcionalidad debe utilizar los endpoints configurados para Ollama y para el modelo de",
+        "difusión (ya sea en Colab o en local).",
+        "o En ambos casos, los servicios deben exponerse mediante ngrok para permitir la comunicación",
+        "desde el sitio web.",
+        "o Finalmente, todo el proyecto debe estar desplegado en AWS, con excepción del modelo de difusión,",
+        "que puede ejecutarse en Colab o de forma local según se requiera.",
+        "Entregables:",
+        "La evaluación se realizará a través del sitio web generado, verificando la integración funcional de todos los",
+        "componentes tal como se solicita en las instrucciones.",
+        "",
+        "Calificación",
+        "• Sustentación por un miembro del grupo 1.5 pts.",
+        "• Repositorio y arquitectura completa 2.5 pts.",
+        "• Metodología y seguimiento a los experimentos 1.0 pts."
+      ],
+      "annotations": []
+    }
+  ],
+  "full_text": "Modelos de lenguaje a nivel de caracteres con RNN \nParte 1. Generador de caracteres \n¡Bienvenido a la Isla de los Dinosaurios! Los principales investigadores  en ingeniería genética están creando \nnuevas especies de dinosaurios y tenemos la misión de asignarles un nombre. En este momento contamos con \nuna lista que contiene todos los nombres de dinosaurios conocidos. A partir de ese listado, tenemos la misión \nde entrenar un modelo de lenguaje a nivel de caracteres, usando RNN, que aprenda los patrones de los nombres \ny genere nuevas combinaciones para asignar un nombre a las nuevas especies . Se espera que los  nombres \ngenerados sean originales, plausibles y variados.  \n \n• Datos: https://github.com/jpospinalo/MachineLearning/blob/main/nlp/dinos.csv.  \n• Preprocesamiento: en esta etapa deberá: \no Normalizar el texto  \no Agregar tokens de inicio y fin de secuencia \no Definir la longitud máxima de la secuencia representada por 𝑇 \no Aplicar padding (<PAD>) a las secuencias con menor longitud \no Definir secuencias de entrada y secuencia objetivo. Recuerde que deben tener la forma: \n \n𝑋 = [𝑥0, 𝑥1, … , 𝑥𝑇−1],   𝑌 = [𝑥1, 𝑥2, … , 𝑥𝑇] \n \n• Modelo: el modelo debe funcionar como un decoder-only, es decir, una red que intenta predecir el \nsiguiente carácter de la secuencia de manera autorregresiva. Para su implementación, es posible emplear \nceldas recurrentes del tipo RNN, LSTM o GRU, según la arquitectura que desee explorar\n\n• Muestreo: utilice diferentes temperaturas durante el proceso de generación, por ejemplo: (0.7, 1.0, 2.5, 4). \nAdicionalmente, implemente los métodos top-k y top-p para controlar la diversidad en los nombres \ngenerados y observar su efecto sobre la creatividad y coherencia de los nombres. \n• Entregable: presente los 10 mejores nombres generados y una nota breve (3 –5 líneas) con un análisis \ncomparativo sobre los modelos y parámetros de muestreo que ofrecieron mejores resultados en términos \nde top-k, top-p y temperatura. \nParte 2. Generar una descripción de los nombres generados utilizando \nOllama \nEl objetivo de esta sección es crear una breve descripción para los nombres generados en el punto anterior, \nutilizando alguno de los modelos disponibles en Ollama. Para esta configuración se requiere: \n• Crear un notebook de SageMaker con una instancia tipo m5.xlarge. \n• Instalar Ollama a partir de una imagen de Docker. \n• Descargar un modelo tal como gemma, llama, Qwen según su preferencia. \n• Exponer Ollama mediante un túnel HTTP , utilizando la aplicación ngrok para generar un endpoint con el \nmodelo seleccionado \n• Generar una descripción para los 10 nombres generados en el punto anterior. Proporcione un breve \ncontexto al modelo sobre las reglas y patrones comunes en la formación de nombres de dinosaurios \nreales (por ejemplo, el uso de sufijos como -saurus, -raptor, -odon, -long o -venator, y prefijos de origen \ngriego o latino que describen forma, tamaño o lugar). Esto ayudará a que los nombres generados, aunque \nsean nuevos, mantengan coherencia y semejanza con la nomenclatura paleontológica real. \nNOTA: para este punto no se permite utilizar APIs externas. El ejercicio debe realizarse utilizando un LLM \ninstalado de forma local según las instrucciones. De otra forma no será tenido en cuenta. \nNOTA IMPORTANTE:  \nLos notebooks de SageMaker solo conservan los archivos almacenados en la carpeta /SageMaker, la cual se \nencuentra en el directorio home de la instancia. Por este motivo, es necesario: \n• Cambiar el Docker data-root a un directorio dentro de la carpeta /SageMaker. \n• Configurar un lifecycle script (on-start) en bash que actualice esta ruta automáticamente cada vez que se \ninicie el notebook. \n• De esta forma, se  garantiza la persistencia de la instalación de Ollama y de los modelos descargados, \nevitando que se eliminen al apagar la instancia. \nParte 3. Text-to-Image \nEl objetivo de esta sección es crear una imagen para cada uno de los nombres de dinosaurios generados, \nutilizando un modelo liviano de Text -to-Image que pueda ejecutarse en Google Colab o en un entorno con \nrecursos limitados. Para esta sección se requiere: \n• Crear un notebook en Google Colab (o entorno equivalente con GPU T4). \n• Instalar las librerías necesarias: diffusers, transformers, torch, accelerate, y safetensors. \n• Seleccionar e implementar un modelo de difusión liviano, por ejemplo: amused/amused-512 disponible \nen Hugging Face, FLUX, etc\n\n• Utilizar como entrada el nombre y algunos detalles de las descripciones generadas en el punto anterior \ncon Ollama \n• Generar una imagen por cada uno de los 10 nombres, empleando un prompt descriptivo que incluya el \nnombre y las características del dinosaurio. \n• Limiten la cantidad de contexto y la resolución de la imagen para disminuir el consumo de recursos. \nParte 4. Integración (Generación+Ollama+Difusión+Web) \nEl objetivo de esta sección es construir un sitio web que integre todos los pasos anteriores. El sitio debe incluir \ntres secciones principales: \n \n• Descripción del modelo: en esta sección presente el informe del entrenamiento del modelo de generación \ndel primer punto. Incluya métricas de evaluación, curvas de aprendizaje, descripción de la arquitectura, etc. \n• Sección de ejemplos:  donde se presenten los nombres, descripciones e imágenes generadas en los tres \npuntos anteriores. Esta información puede mostrarse en una tabla o en el formato visual que el grupo \nprefiera. \n• Sección interactiva: debe existir un botón “Nuevo Dinosaurio” que permita: \no Generar un nuevo nombre, obtener la descripción generada por Ollama y producir la imagen \ncorrespondiente mediante el modelo de difusión. \no Esta funcionalidad debe utilizar los endpoints configurados para Ollama y para el modelo de \ndifusión (ya sea en Colab o en local). \no En ambos casos, los servicios deben exponerse mediante ngrok para permitir la comunicación \ndesde el sitio web. \no Finalmente, todo el proyecto debe estar desplegado en AWS, con excepción del modelo de difusión, \nque puede ejecutarse en Colab o de forma local según se requiera. \nEntregables: \nLa evaluación se realizará a través del sitio web generado, verificando la integración funcional de todos los \ncomponentes tal como se solicita en las instrucciones. \n \nCalificación \n• Sustentación por un miembro del grupo 1.5 pts. \n• Repositorio y arquitectura completa 2.5 pts. \n• Metodología y seguimiento a los experimentos 1.0 pts."
+}
